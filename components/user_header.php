@@ -23,6 +23,7 @@
          <a href="orders.php">orders</a>
          <a href="shop.php">shop</a>
          <a href="contact.php">contact</a>
+         <a href="user_messages.php">messages</a>
       </nav>
 
       <div class="icons">

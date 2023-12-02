@@ -264,13 +264,13 @@ section{
 
 .home-bg .home .slide .content span{
    font-size: 2rem;
-   color:var(--white);
+   color:var(--black);
 }
 
 .home-bg .home .slide .content h3{
    margin-top: 1rem;
    font-size: 4rem;
-   color:var(--white);
+   color:var(--black);
    text-transform: uppercase;
 }
 
