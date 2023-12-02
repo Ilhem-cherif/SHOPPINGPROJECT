@@ -15,7 +15,7 @@
 
    <section class="flex">
 
-      <a href="home.php" class="logo">Shopie<span>.</span></a>
+      <a href="home.php" class="logo">PULL&BEAR<span>.</span></a>
 
       <nav class="navbar">
          <a href="home.php">home</a>
@@ -23,6 +23,7 @@
          <a href="orders.php">orders</a>
          <a href="shop.php">shop</a>
          <a href="contact.php">contact</a>
+      
       </nav>
 
       <div class="icons">
