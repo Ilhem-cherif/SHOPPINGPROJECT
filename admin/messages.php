@@ -16,6 +16,15 @@ if(isset($_GET['delete'])){
    $delete_message->execute([$delete_id]);
    header('location:messages.php');
 }
+// Update the admin reply
+if(isset($_POST['reply'])){
+   $message_id = $_POST['message_id'];
+   $admin_reply = $_POST['admin_reply'];
+   $admin_reply = filter_var($admin_reply, FILTER_SANITIZE_STRING);
+
+   $update_reply = $conn->prepare("UPDATE `messages` SET admin_reply = ? WHERE id = ?");
+   $update_reply->execute([$admin_reply, $message_id]);
+}
 
 ?>
 
@@ -53,7 +62,15 @@ if(isset($_GET['delete'])){
    <p> name : <span><?= $fetch_message['name']; ?></span></p>
    <p> email : <span><?= $fetch_message['email']; ?></span></p>
    <p> number : <span><?= $fetch_message['number']; ?></span></p>
-   <p> message : <span><?= $fetch_message['message']; ?></span></p>
+   <p> message : <span><?= $fetch_message['message'] ;?></span></p>
+
+    <!-- Admin reply form -->
+    <form action="" method="post">
+            <input type="hidden" name="message_id" value="<?= $fetch_message['id']; ?>">
+            <p>Admin Reply:</p>
+            <textarea name="admin_reply" id="admin_reply" cols="30" rows="5"><?= $fetch_message['admin_reply']; ?></textarea>
+            <input type="submit" value="Reply" class="option-btn" name="reply">
+    </form>
    <a href="messages.php?delete=<?= $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">delete</a>
    </div>
    <?php

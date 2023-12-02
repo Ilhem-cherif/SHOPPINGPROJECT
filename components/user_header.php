@@ -23,7 +23,11 @@
          <a href="orders.php">orders</a>
          <a href="shop.php">shop</a>
          <a href="contact.php">contact</a>
+<<<<<<< HEAD
       
+=======
+         <a href="user_messages.php">messages</a>
+>>>>>>> 6072b6d928b7dd0577ea3c3925d5ddd3e8f808bd
       </nav>
 
       <div class="icons">
