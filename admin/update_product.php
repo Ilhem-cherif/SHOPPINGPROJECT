@@ -18,10 +18,11 @@ if(isset($_POST['update'])){
    $price = $_POST['price'];
    $price = filter_var($price, FILTER_SANITIZE_STRING);
    $details = $_POST['details'];
-   $details = filter_var($details, FILTER_SANITIZE_STRING);
-
-   $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ?, details = ? WHERE id = ?");
-   $update_product->execute([$name, $price, $details, $pid]);
+   $details = filter_var($details, FILTER_SANITIZE_STRING); 
+   // Updated code for category
+   $category = $_POST['category'];
+   $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ?, details = ?, code_categorie = ? WHERE id = ?");
+   $update_product->execute([$name, $price, $details, $category,$pid]);
 
    $message[] = 'product updated successfully!';
 
@@ -99,6 +100,17 @@ if(isset($_POST['update'])){
       <input type="hidden" name="pid" value="<?= $fetch_products['id']; ?>">
       <input type="hidden" name="old_image_01" value="<?= $fetch_products['image_01']; ?>">
       <input type="hidden" name="old_image_02" value="<?= $fetch_products['image_02']; ?>">
+      <span>Select Category (required)</span>
+      <select class="box" name="category">
+         <?php
+            $select_categories = $conn->prepare("SELECT * FROM `categorie`");
+            $select_categories->execute();
+            while ($category = $select_categories->fetch(PDO::FETCH_ASSOC)) {
+               $selected = ($category['code'] == $fetch_products['code_categorie']) ? 'selected' : '';
+               echo '<option value="' . $category['code'] . '" ' . $selected . '>' . $category['nom'] . '</option>';
+            }
+         ?>
+      </select>
       <div class="image-container">
          <div class="main-image">
             <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="">

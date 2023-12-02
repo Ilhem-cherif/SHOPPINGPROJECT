@@ -18,6 +18,7 @@ if(isset($_POST['add_product'])){
    $price = filter_var($price, FILTER_SANITIZE_STRING);
    $details = $_POST['details'];
    $details = filter_var($details, FILTER_SANITIZE_STRING);
+   $category = $_POST['category'];
 
    $image_01 = $_FILES['image_01']['name'];
    $image_01 = filter_var($image_01, FILTER_SANITIZE_STRING);
@@ -39,8 +40,8 @@ if(isset($_POST['add_product'])){
       $message[] = 'product name already exist!';
    }else{
 
-      $insert_products = $conn->prepare("INSERT INTO `products`(name, details, price, image_01, image_02) VALUES(?,?,?,?,?)");
-      $insert_products->execute([$name, $details, $price, $image_01, $image_02]);
+      $insert_products = $conn->prepare("INSERT INTO `products`(name, details, price,image_01, image_02,code_categorie) VALUES(?,?,?,?,?,?)");
+      $insert_products->execute([$name, $details, $price, $image_01, $image_02,$category]);
 
       if($insert_products){
          if($image_size_01 > 2000000 OR $image_size_02 > 2000000){
@@ -120,6 +121,22 @@ if(isset($_GET['delete'])){
             <span>product details (required)</span>
             <textarea name="details" placeholder="enter product details" class="box" required maxlength="500" cols="30" rows="10"></textarea>
          </div>
+         <div class="inputBox">
+            <span>Select Category (required)</span>
+            <select class="box" name="category">
+               <?php
+                     // Fetch all categories from the database
+                     $select_categories = $conn->prepare("SELECT * FROM `categorie`");
+                     $select_categories->execute();
+
+                     // Use a while loop to iterate over all rows
+                     while ($category = $select_categories->fetch(PDO::FETCH_ASSOC)) {
+                        echo '<option value="' . $category['code'] . '">' . $category['nom'] . '</option>';
+                     }
+               ?>
+            </select>
+         </div>
+
       </div>
       
       <input type="submit" value="add product" class="btn" name="add_product">
