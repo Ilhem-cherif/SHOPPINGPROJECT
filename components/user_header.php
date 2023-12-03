@@ -18,16 +18,12 @@
       <a href="home.php" class="logo">PULL&BEAR<span>.</span></a>
 
       <nav class="navbar">
-         <a href="home.php">home</a>
-         <a href="about.php">about</a>
-         <a href="orders.php">orders</a>
-         <a href="shop.php">shop</a>
-         <a href="contact.php">contact</a>
-<<<<<<< HEAD
-      
-=======
-         <a href="user_messages.php">messages</a>
->>>>>>> 6072b6d928b7dd0577ea3c3925d5ddd3e8f808bd
+         <a href="home.php">Home</a>
+         <a href="about.php">About</a>
+         <a href="orders.php">Orders</a>
+         <a href="shop.php">Shop</a>
+         <a href="contact.php">Contact</a>
+         <a href="user_messages.php">Messages</a>
       </nav>
 
       <div class="icons">

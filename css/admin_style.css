@@ -561,7 +561,9 @@ section{
 .contacts .box-container .box p span{
    color:var(--main-color);
 }
-
+textarea {
+   font-size: 1.7rem;
+}
 
 
 

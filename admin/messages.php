@@ -68,7 +68,7 @@ if(isset($_POST['reply'])){
     <form action="" method="post">
             <input type="hidden" name="message_id" value="<?= $fetch_message['id']; ?>">
             <p>Admin Reply:</p>
-            <textarea name="admin_reply" id="admin_reply" cols="30" rows="5"><?= $fetch_message['admin_reply']; ?></textarea>
+            <textarea name="admin_reply" id="admin_reply" placeholder="enter your response" cols="30" rows="5"><?= $fetch_message['admin_reply']; ?></textarea>
             <input type="submit" value="Reply" class="option-btn" name="reply">
     </form>
    <a href="messages.php?delete=<?= $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">delete</a>
