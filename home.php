@@ -94,17 +94,26 @@ include 'components/wishlist_cart.php';
 
    <div class="swiper-wrapper">
 
-   <a href="category.php?category=shirt" class="swiper-slide slide">
+   <a href="category.php?category=shirts" class="swiper-slide slide">
       <img src="images/shirt.png" alt="">
-      <h3>shirts</h3>
+      <h3>T-shirts</h3>
    </a>
+   <a href="category.php?category=heels" class="swiper-slide slide">
+      <img src="images/talon.png" alt="">
+      <h3>heels</h3>
+   </a>
+   <a href="category.php?category=skirts" class="swiper-slide slide">
+      <img src="images/skirt.png" alt="">
+      <h3>skirts</h3>
+   </a>
+
 
    <a href="category.php?category=pants" class="swiper-slide slide">
       <img src="images/pants.png" alt="">
       <h3>pants</h3>
    </a>
 
-   <a href="category.php?category=hat" class="swiper-slide slide">
+   <a href="category.php?category=hats" class="swiper-slide slide">
       <img src="images/hats.png" alt="">
       <h3>hats</h3>
    </a>
@@ -119,7 +128,7 @@ include 'components/wishlist_cart.php';
       <h3>ladies slipper</h3>
    </a>
 
-   <a href="category.php?category=bag" class="swiper-slide slide">
+   <a href="category.php?category=bags" class="swiper-slide slide">
       <img src="images/bag.png" alt="">
       <h3>bags</h3>
    </a>
