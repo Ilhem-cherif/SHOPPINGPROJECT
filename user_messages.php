@@ -32,7 +32,6 @@ if(isset($_GET['delete'])){
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/admin_style.css">
 
 </head>
 
@@ -40,7 +39,7 @@ if(isset($_GET['delete'])){
 
     <?php include 'components/user_header.php'; ?>
 
-    <section class="contacts">
+    <section class="messaging">
 
         <h1 class="heading">Your Messages</h1>
 

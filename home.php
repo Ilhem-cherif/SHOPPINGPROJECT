@@ -60,7 +60,7 @@ include 'components/wishlist_cart.php';
       
       <div class="content">
          <h3>GET UP TO 45%</h3></br>
-         <h3>OFF NEW PRODUCTS</h3></br>
+         <h3>OFF NEW Collections</h3></br>
          <span>The biggest sale of the year is at </span>
          
   <span class="pull-bear">Fashion&Fly</span></br>
@@ -72,8 +72,8 @@ include 'components/wishlist_cart.php';
       <div class="swiper-slide slide">
     
       <div class="content">
-         <h3>GET UP TO 45%</h3></br>
-         <h3>OFF NEW PRODUCTS</h3></br>
+         <h3>Profit now </h3></br>
+         <h3>Fashion trending</h3></br>
          <span>The biggest sale of the year is at </span>
          
   <span class="pull-bear">Fashion&Fly</span></br>

@@ -24,6 +24,10 @@ if(isset($_POST['submit'])){
         if ($rememberMe) {
             setcookie('admin_name', $name, time() + (86400 * 30), "/"); // 86400 = 1 day
             setcookie('admin_pass', $pass, time() + (86400 * 30), "/"); // Adjust expiration time as needed
+        }else {
+            // Unset cookies if "Remember Me" is not checked
+            setcookie('admin_name', '', time() - 3600, "/");
+            setcookie('admin_pass', '', time() - 3600, "/");
         }
 
         header('location:dashboard.php');
@@ -35,6 +39,15 @@ if(isset($_POST['submit'])){
 // Check if cookies are set and populate the form fields
 $rememberedName = isset($_COOKIE['admin_name']) ? $_COOKIE['admin_name'] : '';
 $rememberedPass = isset($_COOKIE['admin_pass']) ? $_COOKIE['admin_pass'] : '';
+// Logout logic - unset cookies and session
+if (isset($_GET['logout'])) {
+    setcookie('admin_name', '', time() - 3600, "/");
+    setcookie('admin_pass', '', time() - 3600, "/");
+    session_destroy();
+    header('location: admin_login.php');
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -73,21 +86,11 @@ if(isset($message)){
         <h1 class="text-center">Login</h1>
         <div class="form-group">
             <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="fa fa-user"></span>
-                    </span>
-                </div>
                 <input type="text" name="name" class="form-control" placeholder="Username" required="required" value="<?php echo $rememberedName; ?>">
             </div>
         </div>
         <div class="form-group">
             <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <i class="fa fa-lock"></i>
-                    </span>
-                </div>
                 <input type="password" name="pass" class="form-control" placeholder="Password" required="required" value="<?php echo $rememberedPass; ?>">
             </div>
         </div>
@@ -97,11 +100,10 @@ if(isset($message)){
         </div>
         <div class="bottom-action clearfix">
                <input type="checkbox" class="form-check-input" name="remember" id="remember" <?php echo isset($_COOKIE['admin_name']) ? 'checked' : ''; ?>>
-                <label class="form-check-label" for="remember">Remember me</label>
-            <a href="#" class="float-right">Forgot Password?</a>
+               &nbsp; 
+               <label class="form-check-label" for="remember">Remember me</label>
         </div>
     </form>
-    <p class="text-center small">Don't have an account! <a href="#">Sign up here</a>.</p>
 </section>
    
 </body>
