@@ -312,6 +312,7 @@ section{
 .dashboard .box-container .box h3{
    font-size: 2.7rem;
    color:var(--black);
+   text-align: center;
 }
 
 .dashboard .box-container .box h3 span{

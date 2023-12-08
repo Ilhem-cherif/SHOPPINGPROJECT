@@ -44,34 +44,40 @@ include 'components/wishlist_cart.php';
    <div class="swiper-wrapper">
 
       <div class="swiper-slide slide">
-         <div class="image">
-            <img src="images/home-img.png" alt="">
-         </div>
+      
          <div class="content">
-            <span>upto 50% off</span>
-            <h3>Fashon Trending</h3>
+         <h3>GET UP TO 45%</h3></br>
+         <h3>OFF NEW PRODUCTS</h3></br>
+         <span>The biggest sale of the year is at </span>
+         
+  <span class="pull-bear">Fashion&Fly</span></br>
+      
             <a href="shop.php" class="btn">shop now</a>
          </div>
       </div>
 
       <div class="swiper-slide slide">
-         <div class="image">
-            <img src="images/portrait.jpg" alt="">
-         </div>
-         <div class="content">
-            <span>upto 50% off</span>
-            <h3>Great Collection</h3>
+      
+      <div class="content">
+         <h3>GET UP TO 45%</h3></br>
+         <h3>OFF NEW PRODUCTS</h3></br>
+         <span>The biggest sale of the year is at </span>
+         
+  <span class="pull-bear">Fashion&Fly</span></br>
+      
             <a href="shop.php" class="btn">shop now</a>
          </div>
       </div>
 
       <div class="swiper-slide slide">
-         <div class="image">
-            <img src="images/deals-1.jpg" alt="">
-         </div>
-         <div class="content">
-            <span>upto 50% off</span>
-            <h3>latest collection</h3>
+    
+      <div class="content">
+         <h3>GET UP TO 45%</h3></br>
+         <h3>OFF NEW PRODUCTS</h3></br>
+         <span>The biggest sale of the year is at </span>
+         
+  <span class="pull-bear">Fashion&Fly</span></br>
+      
             <a href="shop.php" class="btn">shop now</a>
          </div>
       </div>

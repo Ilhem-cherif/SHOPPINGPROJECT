@@ -15,7 +15,7 @@
 
    <section class="flex">
 
-      <a href="home.php" class="logo">PULL&BEAR<span>.</span></a>
+      <a href="home.php" class="logo">Fashion&Fly<span>.</span></a>
 
       <nav class="navbar">
          <a href="home.php">Home</a>
