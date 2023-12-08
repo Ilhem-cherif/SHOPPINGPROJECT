@@ -89,6 +89,7 @@ if (isset($_GET['delete'])) {
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
    <link rel="stylesheet" href="../css/admin_style.css">
+   <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body>
@@ -147,6 +148,12 @@ if (isset($_GET['delete'])) {
 <section class="show-products">
 
    <h1 class="heading">products added</h1>
+   <section class="search-form">
+   <form action="" method="post">
+      <input type="text" id="searchInput" name="search_box" placeholder="search here..." maxlength="100" class="box" required>
+      <button type="submit" id="searchButton" class="fas fa-search" name="search_btn"></button>
+   </form>
+   </section>
 
    <div class="box-container">
 
@@ -176,15 +183,50 @@ if (isset($_GET['delete'])) {
    </div>
 
 </section>
-
-
-
-
-
-
-
-
 <script src="../js/admin_script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+   $(document).ready(function(){
+      $('#searchInput').on('input', function(){
+         var search_term = $(this).val();
+         var category = $('#categorySelect').val();
+
+         $.ajax({
+            url: 'search_product.php',
+            method: 'POST',
+            data: {search_term: search_term, category: category},
+            dataType: 'json',
+            success: function(response){
+               displayProducts(response);
+            },
+            error: function(error){
+               console.log(error);
+            }
+         });
+      });
+
+      function displayProducts(products){
+         var boxContainer = $('.box-container');
+         boxContainer.empty();
+
+         if(products.length > 0){
+            $.each(products, function(index, product){
+               var box = $('<div class="box">');
+               box.append('<img src="../uploaded_img/' + product.image_01 + '" alt="">');
+               box.append('<div class="name">' + product.name + '</div>');
+               box.append('<div class="price">$<span>' + product.price + '</span>/-</div>');
+               box.append('<div class="details"><span>' + product.details + '</span></div>');
+               box.append('<div class="flex-btn"><a href="update_product.php?update=' + product.id + '" class="option-btn">update</a><a href="products.php?delete=' + product.id + '" class="delete-btn" onclick="return confirm(\'delete this product?\');">delete</a></div>');
+
+               boxContainer.append(box);
+            });
+         } else {
+            boxContainer.append('<p class="empty">No matching products found!</p>');
+         }
+      }
+   });
+</script>
    
 </body>
 </html>
