@@ -655,6 +655,9 @@ section{
    color:var(--red);
    margin-right: auto;
 }
+.products .box-container .box .delete-btn{
+   background-color: #b9b58d;
+}
 
 .form-container form{
    background-color: var(--white);
@@ -854,6 +857,12 @@ section{
 .wishlist-total p span{
    color:var(--red);
 }
+.wishlist-total .option-btn{
+   background-color: #A0C1B9;
+}
+.wishlist-total .delete-btn{
+   background-color: #b9b58d;
+}
 
 .shopping-cart .fa-edit{
    height: 4.5rem;
@@ -899,6 +908,16 @@ section{
 .cart-total p span{
    color:var(--red);
 }
+.cart-total .delete-btn{
+   background-color: #b9b58d;
+}
+.cart-total .option-btn {
+   background-color: #A0C1B9;
+}
+.shopping-cart .box-container .box .delete-btn{
+   background-color: #b9b58d;
+}
+
 
 .display-orders{
    text-align: center;
