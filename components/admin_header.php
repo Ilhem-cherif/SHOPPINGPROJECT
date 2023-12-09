@@ -18,12 +18,12 @@
       <a href="../admin/dashboard.php" class="logo">Admin<span>Panel</span></a>
 
       <nav class="navbar">
-         <a href="../admin/dashboard.php">home</a>
-         <a href="../admin/products.php">products</a>
-         <a href="../admin/categories.php">categories</a>
-         <a href="../admin/placed_orders.php">orders</a>
-         <a href="../admin/users_accounts.php">users</a>
-         <a href="../admin/messages.php">messages</a>
+         <a href="../admin/dashboard.php">Home</a>
+         <a href="../admin/products.php">Products</a>
+         <a href="../admin/categories.php">Categories</a>
+         <a href="../admin/placed_orders.php">Orders</a>
+         <a href="../admin/users_accounts.php">Users</a>
+         <a href="../admin/messages.php">Messages</a>
       </nav>
 
       <div class="icons">
