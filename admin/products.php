@@ -190,12 +190,10 @@ if (isset($_GET['delete'])) {
    $(document).ready(function(){
       $('#searchInput').on('input', function(){
          var search_term = $(this).val();
-         var category = $('#categorySelect').val();
-
          $.ajax({
             url: 'search_product.php',
             method: 'POST',
-            data: {search_term: search_term, category: category},
+            data: {search_term: search_term},
             dataType: 'json',
             success: function(response){
                displayProducts(response);

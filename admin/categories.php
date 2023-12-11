@@ -78,7 +78,7 @@ if (isset($_GET['delete'])) {
 
    <h1 class="heading">Add Category</h1>
 
-   <form action="" method="post" enctype="multipart/form-data">
+   <form action="" method="post" >
       <div class="flex">
          <div class="inputBox">
             <span>Category Name (required)</span>

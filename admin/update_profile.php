@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
    $update_profile_name = $conn->prepare("UPDATE `admins` SET name = ? WHERE id = ?");
    $update_profile_name->execute([$name, $admin_id]);
 
-   $empty_pass = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
+   $empty_pass = '';
    $prev_pass = $_POST['prev_pass'];
    $old_pass = ($_POST['old_pass']);
    $old_pass = filter_var($old_pass, FILTER_SANITIZE_STRING);

@@ -19,7 +19,6 @@ if(isset($_POST['update'])){
    $price = filter_var($price, FILTER_SANITIZE_STRING);
    $details = $_POST['details'];
    $details = filter_var($details, FILTER_SANITIZE_STRING); 
-   // Updated code for category
    $category = $_POST['category'];
    $update_product = $conn->prepare("UPDATE `products` SET name = ?, price = ?, details = ?, code_categorie = ? WHERE id = ?");
    $update_product->execute([$name, $price, $details, $category,$pid]);

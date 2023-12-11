@@ -112,8 +112,19 @@ include 'components/wishlist_cart.php';
       <img src="images/skirt.png" alt="">
       <h3>skirts</h3>
    </a>
-
-
+   
+   <a href="category.php?category=bags" class="swiper-slide slide">
+      <img src="images/bag.png" alt="">
+      <h3>bags</h3>
+   </a>
+   <a href="category.php?category=dress" class="swiper-slide slide">
+      <img src="images/dress.png" alt="">
+      <h3>dresses</h3>
+   </a>
+   <a href="category.php?category=coats" class="swiper-slide slide">
+      <img src="images/coat.png" alt="">
+      <h3>coats</h3>
+   </a>
    <a href="category.php?category=pants" class="swiper-slide slide">
       <img src="images/pants.png" alt="">
       <h3>pants</h3>
@@ -134,10 +145,7 @@ include 'components/wishlist_cart.php';
       <h3>ladies slipper</h3>
    </a>
 
-   <a href="category.php?category=bags" class="swiper-slide slide">
-      <img src="images/bag.png" alt="">
-      <h3>bags</h3>
-   </a>
+   
 
    </div>
 

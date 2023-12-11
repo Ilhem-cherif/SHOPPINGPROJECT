@@ -740,6 +740,9 @@ body {
 .contacts .box-container .box p span{
    color:var(--main-color);
 }
+.contacts .box-container .box textarea{
+   font-size: 18px;
+}
 
 
 
